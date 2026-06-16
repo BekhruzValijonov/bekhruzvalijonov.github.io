@@ -10,6 +10,10 @@ import Footer from "./components/Footer";
 export default function App() {
   return (
     <div className="relative min-h-svh bg-ink bg-grid">
+      <div
+        aria-hidden
+        className="bg-mesh pointer-events-none fixed inset-0 -z-10"
+      />
       <Nav />
       <main>
         <Hero />
