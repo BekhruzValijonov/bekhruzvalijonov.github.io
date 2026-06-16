@@ -20,9 +20,35 @@ export type Experience = {
   period: string;
   current?: boolean;
   points: string[];
+  stack?: string[];
 };
 
 export const experience: Experience[] = [
+  {
+    company: "Planix",
+    role: "Full-Stack Developer · Personal Project",
+    location: "Personal Project",
+    period: "2026",
+    points: [
+      "Solo full-stack personal project — designed, built and shipped both the backend and the cross-platform client myself.",
+      "Built the backend on Cloudflare Workers with Hono, R2 object storage, a database layer, scheduled cron jobs and web push notifications.",
+      "Integrated Claude LLM models for AI features and implemented Google / Gmail OAuth login.",
+      "Developed the cross-platform client with Tauri and Framework7.",
+    ],
+    stack: [
+      "Cloudflare",
+      "Hono",
+      "Claude LLM",
+      "R2",
+      "Database",
+      "Cron",
+      "Web Push",
+      "Google OAuth",
+      "Tauri",
+      "Framework7",
+      "AI",
+    ],
+  },
   {
     company: "Leerybit",
     role: "Frontend Developer",

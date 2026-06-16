@@ -34,6 +34,18 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
+                {job.stack && (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {job.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="rounded-full border border-cream/10 px-3 py-1 font-mono text-[11px] tracking-wide text-muted"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </article>
           </Reveal>
