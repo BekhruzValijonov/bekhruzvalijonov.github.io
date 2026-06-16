@@ -13,18 +13,6 @@ const item = {
 export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-svh flex-col justify-center overflow-hidden px-6 pt-28 pb-16 md:px-10">
-      {/* atmospheric glows */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-[-10%] left-[-5%] h-[60vh] w-[60vh] rounded-full opacity-50 blur-[120px]"
-        style={{ background: "radial-gradient(circle, rgba(203,255,70,0.16), transparent 70%)" }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[-10%] bottom-[-20%] h-[50vh] w-[50vh] rounded-full opacity-40 blur-[130px]"
-        style={{ background: "radial-gradient(circle, rgba(255,106,61,0.14), transparent 70%)" }}
-      />
-
       <motion.div
         variants={container}
         initial="hidden"

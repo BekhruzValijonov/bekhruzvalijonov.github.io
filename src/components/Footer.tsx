@@ -13,12 +13,6 @@ const socials = [
 export default function Footer() {
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-cream/10 px-6 pt-24 pb-10 md:px-10 md:pt-36">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-1/3 left-1/2 h-[60vh] w-[80vw] -translate-x-1/2 rounded-full opacity-40 blur-[140px]"
-        style={{ background: "radial-gradient(circle, rgba(203,255,70,0.12), transparent 70%)" }}
-      />
-
       <div className="relative mx-auto max-w-7xl">
         <SectionLabel index="05">Contact</SectionLabel>
 

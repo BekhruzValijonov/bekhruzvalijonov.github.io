@@ -27,7 +27,7 @@ export const experience: Experience[] = [
     company: "Leerybit",
     role: "Frontend Developer",
     location: "Tashkent",
-    period: "Oct 2023 — Present",
+    period: "Oct 2023",
     current: true,
     points: [
       "Developed and maintained production frontend features with React, TypeScript, JavaScript and modern tooling.",

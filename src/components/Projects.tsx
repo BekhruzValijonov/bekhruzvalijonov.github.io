@@ -15,13 +15,6 @@ export default function Projects() {
                 i % 2 === 1 ? "md:mt-12" : ""
               }`}
             >
-              {/* hover glow */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: "radial-gradient(circle, rgba(203,255,70,0.18), transparent 70%)" }}
-              />
-
               <div className="mb-6 flex items-start justify-between">
                 <span className="font-display text-5xl text-faint transition-colors duration-500 group-hover:text-lime">
                   {p.index}
