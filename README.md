@@ -25,11 +25,14 @@ All text lives in **`src/data.ts`** — profile, experience, projects, skills, e
 
 Section components are in `src/components/` (`Hero`, `About`, `Experience`, `Projects`, `Skills`, `Footer`, …).
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages (root domain)
 
-1. Push this repo to GitHub (e.g. `BekhruzValijonov/portfolio`).
+This site is served from the root user domain **https://bekhruzvalijonov.github.io/**.
+For that, the repository must be named `bekhruzvalijonov.github.io`.
+
+1. Name (or rename) the repo **`bekhruzvalijonov.github.io`** on GitHub.
 2. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds and publishes automatically.
 
-`vite.config.ts` uses `base: "./"` (relative paths), so it works on both
-`username.github.io` and `username.github.io/repo` without changes.
+`vite.config.ts` uses `base: "./"` (relative paths), so the same build works on the
+root domain and on a project subpath (`username.github.io/repo`) without changes.
