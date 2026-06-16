@@ -26,9 +26,21 @@ export default function Projects() {
                 <span className="font-display text-5xl text-faint transition-colors duration-500 group-hover:text-lime">
                   {p.index}
                 </span>
-                <span className="font-mono text-lg text-faint transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-cream">
-                  ↗
-                </span>
+                {p.links?.[0] ? (
+                  <a
+                    href={p.links[0].href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-lime/40 px-3 py-1 font-mono text-[11px] tracking-wider text-lime uppercase transition-colors hover:bg-lime hover:text-ink"
+                  >
+                    Live
+                    <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+                  </a>
+                ) : (
+                  <span className="font-mono text-lg text-faint transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-cream">
+                    ↗
+                  </span>
+                )}
               </div>
 
               <h3 className="font-display text-2xl leading-tight text-cream md:text-3xl">{p.title}</h3>
@@ -43,15 +55,33 @@ export default function Projects() {
                 ))}
               </ul>
 
-              <div className="mt-auto flex flex-wrap gap-2 pt-7">
-                {p.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-cream/10 px-3 py-1 font-mono text-[11px] tracking-wide text-muted"
-                  >
-                    {s}
-                  </span>
-                ))}
+              <div className="mt-auto pt-7">
+                {(p.links || p.note) && (
+                  <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px] tracking-wide">
+                    {p.links?.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="link-sweep text-cream hover:text-lime"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                    {p.note && <span className="text-faint">· {p.note}</span>}
+                  </div>
+                )}
+                <div className="flex flex-wrap gap-2">
+                  {p.stack.map((s) => (
+                    <span
+                      key={s}
+                      className="rounded-full border border-cream/10 px-3 py-1 font-mono text-[11px] tracking-wide text-muted"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           </Reveal>

@@ -54,11 +54,40 @@ export type Project = {
   blurb: string;
   points: string[];
   stack: string[];
+  links?: { label: string; href: string }[];
+  note?: string;
 };
 
 export const projects: Project[] = [
   {
     index: "01",
+    title: "Edu Admin Dashboard — Imaan-Tech",
+    blurb:
+      "School & learning-center management dashboard — academics, finance, attendance, communication, cameras, reporting and administration.",
+    points: [
+      "Built interfaces for student finance, teacher salaries, payouts, expenses, KPI dashboards, rewards, market orders, reports, branches, users and parent management.",
+      "Implemented dashboard cards, date filters, refresh actions, empty states, export-to-Excel and structured navigation for a large multi-module admin system.",
+      "Contributed to camera features — camera dashboards, live camera analysis, AI video analysis and Face ID device management.",
+    ],
+    stack: ["React", "TypeScript", "REST API", "Admin Panel", "Dashboard UI", "Responsive"],
+    links: [{ label: "admin.imaantech.uz", href: "https://admin.imaantech.uz" }],
+    note: "Demo access on request",
+  },
+  {
+    index: "02",
+    title: "Student Web Portal & AI Tools — Imaan-Tech",
+    blurb: "Student-facing side of an education-management ecosystem, with AI-powered learning tools.",
+    points: [
+      "Built student pages: dashboard, payments, attendance history, XP progress, rating, AI assistant, profile and settings.",
+      "Developed AI learning tools — AI Chat, Explain, Speaking, Writing, Responses and ChatGPT-based assistant flows.",
+      "Implemented Face ID attendance UI with camera-access flow, GPS permission handling and attendance status feedback.",
+    ],
+    stack: ["React", "TypeScript", "REST API", "AI / LLM", "Face ID", "Responsive"],
+    links: [{ label: "edu.imaantech.uz", href: "https://edu.imaantech.uz" }],
+    note: "Demo access on request",
+  },
+  {
+    index: "03",
     title: "Enterprise Queue Management System",
     blurb: "Large-scale platform for customer flow, operator workflows and service processes.",
     points: [
@@ -68,7 +97,7 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "WebSocket", "amCharts", "Redux Toolkit"],
   },
   {
-    index: "02",
+    index: "04",
     title: "Android TV / Kiosk Applications",
     blurb: "Queue management and public information displays for TV & kiosk hardware.",
     points: [
@@ -78,7 +107,7 @@ export const projects: Project[] = [
     stack: ["Kotlin", "Jetpack Compose", "Android TV", "WebView"],
   },
   {
-    index: "03",
+    index: "05",
     title: "Electron Desktop Launcher",
     blurb: "Linux desktop launcher with update handling and deployment workflows.",
     points: [
@@ -88,7 +117,7 @@ export const projects: Project[] = [
     stack: ["Electron", "Node.js", "Linux", "AppImage"],
   },
   {
-    index: "04",
+    index: "06",
     title: "Plant AI Application",
     blurb: "AI-powered plant identification and care with image analysis & disease detection.",
     points: [
