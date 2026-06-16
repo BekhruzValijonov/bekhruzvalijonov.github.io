@@ -36,6 +36,10 @@ export default function Projects() {
                 )}
               </div>
 
+              <div className="mb-2 flex items-center gap-2 font-mono text-[11px] tracking-wider text-faint uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-lime/70" />
+                {p.company}
+              </div>
               <h3 className="font-display text-2xl leading-tight text-cream md:text-3xl">{p.title}</h3>
               <p className="mt-3 text-muted">{p.blurb}</p>
 

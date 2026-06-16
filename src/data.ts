@@ -43,7 +43,11 @@ export const experience: Experience[] = [
     location: "Remote",
     period: "Jan 2026 — May 2026",
     points: [
-      "Engineered a web-based educational platform with reusable frontend flows, responsive UI sections and API-connected screens.",
+      "Engineered a web-based educational platform end to end — admin dashboard and student-facing portal — with reusable frontend flows, responsive UI sections and API-connected screens.",
+      "Built large multi-module admin interfaces: student finance, teacher salaries, payouts, expenses, KPI dashboards, reports, branches, users and parent management.",
+      "Developed student-facing pages — dashboard, payments, attendance history, XP progress, rating, profile and settings — with consistent, reusable components.",
+      "Integrated AI-powered learning tools (AI Chat, Explain, Speaking, Writing and ChatGPT-based assistant flows) into the student experience.",
+      "Implemented Face ID attendance UI with camera-access and GPS permission handling, plus camera dashboards and live/AI video analysis features.",
     ],
   },
 ];
@@ -51,6 +55,7 @@ export const experience: Experience[] = [
 export type Project = {
   index: string;
   title: string;
+  company: string;
   blurb: string;
   points: string[];
   stack: string[];
@@ -62,7 +67,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     index: "01",
-    title: "Edu Admin Dashboard — Imaan-Tech",
+    title: "Edu Admin Dashboard",
+    company: "Imaan-Tech",
     blurb:
       "School & learning-center management dashboard — academics, finance, attendance, communication, cameras, reporting and administration.",
     points: [
@@ -76,7 +82,8 @@ export const projects: Project[] = [
   },
   {
     index: "02",
-    title: "Student Web Portal & AI Tools — Imaan-Tech",
+    title: "Student Web Portal & AI Tools",
+    company: "Imaan-Tech",
     blurb: "Student-facing side of an education-management ecosystem, with AI-powered learning tools.",
     points: [
       "Built student pages: dashboard, payments, attendance history, XP progress, rating, AI assistant, profile and settings.",
@@ -90,6 +97,7 @@ export const projects: Project[] = [
   {
     index: "03",
     title: "Enterprise Queue Management System",
+    company: "Leerybit",
     blurb: "Large-scale platform for customer flow, operator workflows and service processes.",
     points: [
       "Designed user-facing features for operational visibility and real-time monitoring.",
@@ -100,6 +108,7 @@ export const projects: Project[] = [
   {
     index: "04",
     title: "Android TV / Kiosk Applications",
+    company: "Leerybit",
     blurb: "Queue management and public information displays for TV & kiosk hardware.",
     points: [
       "Built media scheduling, content updates and offline fallback behavior.",
@@ -110,6 +119,7 @@ export const projects: Project[] = [
   {
     index: "05",
     title: "Electron Desktop Launcher",
+    company: "Leerybit",
     blurb: "Linux desktop launcher with update handling and deployment workflows.",
     points: [
       "Implemented update handling, relaunch logic and deployment workflows.",
@@ -120,6 +130,7 @@ export const projects: Project[] = [
   {
     index: "06",
     title: "Plant AI Application",
+    company: "Personal Project",
     blurb: "AI-powered plant identification and care with image analysis & disease detection.",
     points: [
       "Designed image analysis, disease detection and care-reminder flows.",

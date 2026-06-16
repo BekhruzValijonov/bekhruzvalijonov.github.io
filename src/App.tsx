@@ -12,8 +12,12 @@ export default function App() {
     <div className="relative min-h-svh bg-ink bg-grid">
       <div
         aria-hidden
-        className="bg-mesh pointer-events-none fixed inset-0 -z-10"
-      />
+        className="bg-mesh bg-blobs pointer-events-none fixed inset-0 -z-10"
+      >
+        <div className="blob blob-1" />
+        <div className="blob blob-2" />
+        <div className="blob blob-3" />
+      </div>
       <Nav />
       <main>
         <Hero />
