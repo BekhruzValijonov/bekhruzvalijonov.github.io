@@ -166,14 +166,26 @@ export const projects: Project[] = [
   },
   {
     index: "06",
-    title: "Plant AI Application",
+    title: "Plantix AI",
     company: "Personal Project",
     blurb: "AI-powered plant identification and care with image analysis & disease detection.",
     points: [
       "Designed image analysis, disease detection and care-reminder flows.",
       "Planned AI response structure for diagnosis, care schedules and recommendations.",
     ],
-    stack: ["React", "TypeScript", "Tauri", "AI Vision API", "LLM"],
+    stack: [
+      "Cloudflare",
+      "Hono",
+      "Claude LLM",
+      "R2",
+      "Database",
+      "Cron",
+      "Web Push",
+      "Google OAuth",
+      "Tauri",
+      "Framework7",
+      "AI",
+    ],
   },
 ];
 

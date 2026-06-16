@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="mt-12 grid gap-10 md:grid-cols-12 md:items-end">
           <motion.p variants={item} className="max-w-xl text-lg leading-relaxed text-muted md:col-span-7 md:text-xl">
             I architect and ship production <span className="text-cream">web, desktop &amp; mobile</span> products —
-            from real-time dashboards and data visualization to AI-driven features and serverless backends,
+            from rich, data-driven interfaces to AI-driven features and serverless backends,
             delivered clean across every platform.
           </motion.p>
 
