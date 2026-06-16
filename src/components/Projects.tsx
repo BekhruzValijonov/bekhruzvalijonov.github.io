@@ -11,7 +11,7 @@ export default function Projects() {
         {projects.map((p, i) => (
           <Reveal key={p.index} delay={(i % 2) * 0.08}>
             <article
-              className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-cream/10 bg-ink-2/60 p-7 shadow-[0_1px_2px_rgba(27,25,22,0.05),0_8px_24px_-12px_rgba(27,25,22,0.12)] transition-all duration-500 hover:-translate-y-1 hover:border-lime/40 hover:shadow-[0_4px_12px_rgba(27,25,22,0.08),0_16px_40px_-16px_rgba(27,25,22,0.18)] md:p-9 ${
+              className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-cream/10 bg-ink-2/60 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-lime/40 md:p-9 ${
                 i % 2 === 1 ? "md:mt-12" : ""
               }`}
             >
@@ -19,7 +19,7 @@ export default function Projects() {
               <div
                 aria-hidden
                 className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: "radial-gradient(circle, rgba(120,170,20,0.20), transparent 70%)" }}
+                style={{ background: "radial-gradient(circle, rgba(203,255,70,0.18), transparent 70%)" }}
               />
 
               <div className="mb-6 flex items-start justify-between">

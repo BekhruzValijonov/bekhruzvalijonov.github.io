@@ -16,7 +16,7 @@ export default function Footer() {
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-1/3 left-1/2 h-[60vh] w-[80vw] -translate-x-1/2 rounded-full opacity-40 blur-[140px]"
-        style={{ background: "radial-gradient(circle, rgba(120,170,20,0.14), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(203,255,70,0.12), transparent 70%)" }}
       />
 
       <div className="relative mx-auto max-w-7xl">

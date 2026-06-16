@@ -16,13 +16,13 @@ export default function Hero() {
       {/* atmospheric glows */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-[-10%] left-[-5%] h-[60vh] w-[60vh] rounded-full opacity-70 blur-[120px]"
-        style={{ background: "radial-gradient(circle, rgba(120,170,20,0.16), transparent 70%)" }}
+        className="pointer-events-none absolute top-[-10%] left-[-5%] h-[60vh] w-[60vh] rounded-full opacity-50 blur-[120px]"
+        style={{ background: "radial-gradient(circle, rgba(203,255,70,0.16), transparent 70%)" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-10%] bottom-[-20%] h-[50vh] w-[50vh] rounded-full opacity-50 blur-[130px]"
-        style={{ background: "radial-gradient(circle, rgba(210,120,50,0.14), transparent 70%)" }}
+        className="pointer-events-none absolute right-[-10%] bottom-[-20%] h-[50vh] w-[50vh] rounded-full opacity-40 blur-[130px]"
+        style={{ background: "radial-gradient(circle, rgba(255,106,61,0.14), transparent 70%)" }}
       />
 
       <motion.div
