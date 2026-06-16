@@ -129,7 +129,7 @@ export const projects: Project[] = [
       "Designed user-facing features for operational visibility and real-time monitoring.",
       "Built reporting, analytics, filtering and monitoring tools for high-volume operational data.",
     ],
-    stack: ["React", "TypeScript", "WebSocket", "amCharts", "Redux Toolkit"],
+    stack: ["React", "TypeScript", "WebSocket", "ui-kit (internal)", "core (internal)"],
   },
   {
     index: "04",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
       "Implemented update handling, relaunch logic and deployment workflows.",
       "Solved AppImage-specific debugging and packaging challenges.",
     ],
-    stack: ["Electron", "Node.js", "Linux", "AppImage"],
+    stack: ["Electron", "Linux", "Windows", "Moment.js", "WebSocket", "ui-kit (internal)", "core (internal)"],
   },
   {
     index: "06",
