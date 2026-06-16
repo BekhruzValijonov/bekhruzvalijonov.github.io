@@ -72,6 +72,38 @@ export default function Projects() {
                     {p.note && <span className="text-faint">· {p.note}</span>}
                   </div>
                 )}
+
+                {p.credentials && (
+                  <div className="mb-5 rounded-xl border border-lime/20 bg-lime/[0.04] p-4">
+                    <p className="mb-3 font-mono text-[10px] tracking-widest text-lime uppercase">
+                      Demo login · tap to copy
+                    </p>
+                    <div className="space-y-2">
+                      {p.credentials.map((c) => (
+                        <div key={c.role} className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs">
+                          <span className="w-20 shrink-0 text-faint">{c.role}</span>
+                          <button
+                            type="button"
+                            onClick={() => navigator.clipboard?.writeText(c.login)}
+                            className="rounded bg-cream/5 px-2 py-0.5 text-cream transition-colors hover:bg-cream/10 hover:text-lime"
+                            title="Copy login"
+                          >
+                            {c.login}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => navigator.clipboard?.writeText(c.password)}
+                            className="rounded bg-cream/5 px-2 py-0.5 text-muted transition-colors hover:bg-cream/10 hover:text-lime"
+                            title="Copy password"
+                          >
+                            {c.password}
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex flex-wrap gap-2">
                   {p.stack.map((s) => (
                     <span

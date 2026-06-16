@@ -56,6 +56,7 @@ export type Project = {
   stack: string[];
   links?: { label: string; href: string }[];
   note?: string;
+  credentials?: { role: string; login: string; password: string }[];
 };
 
 export const projects: Project[] = [
@@ -71,7 +72,7 @@ export const projects: Project[] = [
     ],
     stack: ["React", "TypeScript", "REST API", "Admin Panel", "Dashboard UI", "Responsive"],
     links: [{ label: "admin.imaantech.uz", href: "https://admin.imaantech.uz" }],
-    note: "Demo access on request",
+    note: "Admin demo access on request",
   },
   {
     index: "02",
@@ -84,7 +85,7 @@ export const projects: Project[] = [
     ],
     stack: ["React", "TypeScript", "REST API", "AI / LLM", "Face ID", "Responsive"],
     links: [{ label: "edu.imaantech.uz", href: "https://edu.imaantech.uz" }],
-    note: "Demo access on request",
+    credentials: [{ role: "Student", login: "+998200272727", password: "string" }],
   },
   {
     index: "03",
