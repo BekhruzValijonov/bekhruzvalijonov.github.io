@@ -283,7 +283,7 @@ export const education = [
 export const languages = [
   { name: "Uzbek", level: "Native", pct: 100 },
   { name: "Russian", level: "C2", pct: 95 },
-  { name: "English", level: "B2", pct: 70 },
+  { name: "English", level: "B1", pct: 55 },
 ];
 
 export const marqueeWords = [
