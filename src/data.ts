@@ -263,7 +263,15 @@ export const skills: SkillGroup[] = [
   },
   {
     label: "AI & Integrations",
-    items: ["Claude / Anthropic API", "OpenAI API", "LLM Integrations", "AI Vision", "Image Analysis"],
+    items: [
+      "Cloudflare Workers AI",
+      "DeepSeek",
+      "Google Gemini",
+      "LLM Integrations",
+      "SSE Streaming",
+      "AI Vision",
+      "Image Analysis",
+    ],
   },
 ];
 
@@ -290,7 +298,9 @@ export const marqueeWords = [
   "Tailwind",
   "Hono",
   "Cloudflare",
-  "AI",
+  "Workers AI",
+  "DeepSeek",
+  "Gemini",
   "LLM",
   "AI Vision",
 ];
