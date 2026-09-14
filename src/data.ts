@@ -10,7 +10,7 @@ export const profile = {
   linkedinLabel: "in/bekhruz-valijonov",
   available: true,
   summary:
-    "Frontend-focused full-stack developer shipping production web, desktop, mobile and TV apps end to end — React, TypeScript and Next.js on the front, Electron and Tauri with Rust on the desktop, Tauri and Kotlin on Android and Android TV, and NestJS with PostgreSQL on the back. I care about scalable architecture, real-time dashboards, interactive data visualization, WebSocket flows, hardware-facing kiosk and TV apps, AI/LLM integrations and clean cross-platform delivery.",
+    "Frontend-focused full-stack developer and founder of Maven Systems, shipping production web, desktop, mobile and TV apps end to end — React, TypeScript and Next.js on the front, Electron and Tauri with Rust on the desktop, Tauri and Kotlin on Android and Android TV, and NestJS with PostgreSQL on the back. I care about scalable architecture, real-time dashboards, interactive data visualization, WebSocket flows, hardware-facing kiosk and TV apps, AI/LLM integrations and clean cross-platform delivery.",
 };
 
 export type Experience = {
@@ -59,26 +59,13 @@ export const experience: Experience[] = [
     ],
   },
   {
-    company: "Imaan-Tech",
-    role: "Frontend Developer · Freelance",
-    location: "Remote",
-    period: "Jan 2026 — May 2026",
+    company: "Maven Systems",
+    role: "Founder & Lead Developer",
+    location: "Tashkent",
+    period: "2026 — Present",
+    current: true,
     points: [
-      "Engineered a two-app education platform end to end — a React/TypeScript admin dashboard and a student-facing portal — with Zustand state, Tailwind and tri-lingual i18n (Uzbek/Russian/English).",
-      "Built large multi-module admin tooling: student finance and debtors, teacher salaries and payouts, expenses, invoices, KPI dashboards and reports, branches, courses/groups/tests/homeworks, users and RBAC.",
-      "Developed student pages — dashboard, courses, video lessons, tests, homeworks, vocabulary, attendance, finance and a gamified rating/leaderboard.",
-      "Built an AI tutoring suite (Chat, Explain, Speaking, Writing) with SSE streaming over a DeepSeek backend, audio capture with band-score feedback and a Three.js speaking visualization.",
-      "Implemented Face ID attendance with react-webcam capture and GPS geofencing, plus camera dashboards, Hikvision/RTSP device management and Google Gemini lesson-video analysis.",
-    ],
-    stack: ["React", "TypeScript", "Tailwind", "Zustand", "SSE", "DeepSeek", "Google Gemini", "Three.js", "Face ID", "GPS"],
-  },
-  {
-    company: "Calora AI",
-    role: "Full-Stack Developer · Personal Project",
-    location: "Personal Project",
-    period: "2026",
-    points: [
-      "Solo personal project — designed, built and shipped a privacy-first nutrition tracker for Android and desktop end to end, with no account, no subscription and no backend of its own.",
+      "Founded Maven Systems and shipped its first product, Calora AI — a privacy-first nutrition tracker for Android and desktop, designed, built and published solo, with no account, no subscription and no backend of its own.",
       "Built a local-first data layer on SQLite behind repository ports, with an in-memory twin for the browser preview and one shared contract test suite run against both.",
       "Integrated bring-your-own-key AI across OpenAI, Anthropic, Gemini, OpenRouter, Ollama, LM Studio and any OpenAI-compatible endpoint — photo meal scanning, a streaming nutrition coach, recipe suggestions and editable AI memory.",
       "Kept API keys out of the database and exports entirely: they live only in the platform secret store — Keychain, Credential Manager, Secret Service or Android Keystore — through a Rust bridge.",
@@ -98,6 +85,20 @@ export const experience: Experience[] = [
       "i18n",
     ],
   },
+  {
+    company: "Imaan-Tech",
+    role: "Frontend Developer · Freelance",
+    location: "Remote",
+    period: "Jan 2026 — May 2026",
+    points: [
+      "Engineered a two-app education platform end to end — a React/TypeScript admin dashboard and a student-facing portal — with Zustand state, Tailwind and tri-lingual i18n (Uzbek/Russian/English).",
+      "Built large multi-module admin tooling: student finance and debtors, teacher salaries and payouts, expenses, invoices, KPI dashboards and reports, branches, courses/groups/tests/homeworks, users and RBAC.",
+      "Developed student pages — dashboard, courses, video lessons, tests, homeworks, vocabulary, attendance, finance and a gamified rating/leaderboard.",
+      "Built an AI tutoring suite (Chat, Explain, Speaking, Writing) with SSE streaming over a DeepSeek backend, audio capture with band-score feedback and a Three.js speaking visualization.",
+      "Implemented Face ID attendance with react-webcam capture and GPS geofencing, plus camera dashboards, Hikvision/RTSP device management and Google Gemini lesson-video analysis.",
+    ],
+    stack: ["React", "TypeScript", "Tailwind", "Zustand", "SSE", "DeepSeek", "Google Gemini", "Three.js", "Face ID", "GPS"],
+  },
 ];
 
 export type ProjectGroup = { company: string; title: string; caption: string };
@@ -106,7 +107,7 @@ export type ProjectGroup = { company: string; title: string; caption: string };
 export const projectGroups = [
   { company: "Imaan-Tech", title: "Imaan-Tech", caption: "Education platform, built as a freelancer." },
   { company: "Leerybit", title: "Leerybit", caption: "The IQueue queue-management ecosystem used in bank branches." },
-  { company: "Personal Project", title: "Personal projects", caption: "Designed, built and shipped solo." },
+  { company: "Maven Systems", title: "Maven Systems", caption: "Products of the company I founded — designed, built and shipped solo." },
 ] as const satisfies readonly ProjectGroup[];
 
 export type Project = {
@@ -299,7 +300,7 @@ export const projects: Project[] = [
   {
     index: "14",
     title: "Calora AI",
-    company: "Personal Project",
+    company: "Maven Systems",
     blurb:
       "Privacy-first nutrition tracker for Android and desktop — no account, no backend, and AI that runs on the user's own provider and key.",
     points: [
