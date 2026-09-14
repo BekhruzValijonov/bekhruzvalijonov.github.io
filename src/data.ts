@@ -98,10 +98,20 @@ export const experience: Experience[] = [
   },
 ];
 
+export type ProjectGroup = { company: string; title: string; caption: string };
+
+/** Projects section is split into these groups, in this order. */
+export const projectGroups = [
+  { company: "Imaan-Tech", title: "Imaan-Tech", caption: "Education platform, built as a freelancer." },
+  { company: "Leerybit", title: "Leerybit", caption: "The IQueue queue-management ecosystem." },
+  { company: "Personal Project", title: "Personal projects", caption: "Designed, built and shipped solo." },
+] as const satisfies readonly ProjectGroup[];
+
 export type Project = {
   index: string;
   title: string;
-  company: string;
+  /** Must name one of `projectGroups`, otherwise the project would never render. */
+  company: (typeof projectGroups)[number]["company"];
   blurb: string;
   points: string[];
   stack: string[];
