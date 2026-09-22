@@ -11,9 +11,9 @@ export default function About() {
         <div className="md:col-span-7">
           <Reveal>
             <p className="font-display text-3xl leading-[1.25] font-light text-cream sm:text-4xl md:text-[2.7rem]">
-              I turn complex, high-volume product requirements into{" "}
-              <span className="italic text-lime">interfaces people actually enjoy using</span> — then back
-              them with fast, reliable systems built to scale.
+              I build clear, dependable interfaces for{" "}
+              <span className="italic text-lime">complex, data-heavy products</span> — and the systems
+              behind them.
             </p>
           </Reveal>
           <Reveal delay={0.1}>

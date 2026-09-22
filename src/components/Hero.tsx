@@ -38,9 +38,8 @@ export default function Hero() {
 
         <div className="mt-12 grid gap-10 md:grid-cols-12 md:items-end">
           <motion.p variants={item} className="max-w-xl text-lg leading-relaxed text-muted md:col-span-7 md:text-xl">
-            I architect and ship production <span className="text-cream">web, desktop &amp; mobile</span> products —
-            from rich, data-driven interfaces to AI-driven features and the backends behind them,
-            delivered clean across every platform.
+            I build <span className="text-cream">web, desktop, mobile &amp; TV</span> applications — from
+            data-heavy admin panels and real-time dashboards to kiosk apps and the APIs behind them.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap items-center gap-4 md:col-span-5 md:justify-end">
