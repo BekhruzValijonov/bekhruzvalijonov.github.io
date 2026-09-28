@@ -7,8 +7,8 @@ export default function About() {
     <section id="about" className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-36">
       <SectionLabel index="01">About</SectionLabel>
 
-      <div className="grid gap-16 md:grid-cols-12">
-        <div className="md:col-span-7">
+      <div className="grid gap-16 lg:grid-cols-12">
+        <div className="lg:col-span-7">
           <Reveal>
             <p className="font-display text-3xl leading-[1.25] font-light text-cream sm:text-4xl md:text-[2.7rem]">
               I solve problems at the scale of{" "}
@@ -21,7 +21,7 @@ export default function About() {
           </Reveal>
         </div>
 
-        <div className="md:col-span-5 md:pl-8">
+        <div className="lg:col-span-5 lg:pl-8">
           <Reveal delay={0.15}>
             <div className="flex items-baseline justify-between border-b border-cream/10 pb-4">
               <span className="font-mono text-xs tracking-widest text-faint uppercase">Now</span>

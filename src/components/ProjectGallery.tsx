@@ -7,19 +7,20 @@ export default function ProjectGallery({ images }: { images: ProjectImage[] }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 min-w-0">
       <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-widest text-faint uppercase">
         <span>{images.length} screens</span>
         <span className="hidden sm:inline">click to enlarge</span>
+        <span className="sm:hidden">swipe · tap to open</span>
       </div>
-      <div className="-mx-7 flex gap-3 overflow-x-auto px-7 pb-2 [scrollbar-width:thin] md:-mx-9 md:px-9">
+      <div className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:-mx-7 sm:scroll-px-7 sm:px-7 md:-mx-9 md:scroll-px-9 md:px-9 [&::-webkit-scrollbar]:hidden">
         {images.map((img, i) => (
           <button
             key={img.src}
             type="button"
             onClick={() => setOpen(i)}
             aria-label={`Open screen: ${img.alt}`}
-            className="group/shot relative h-36 shrink-0 overflow-hidden rounded-lg border border-cream/10 bg-ink transition-all hover:-translate-y-0.5 hover:border-lime/50 focus-visible:border-lime focus-visible:outline-none"
+            className="group/shot relative h-32 shrink-0 snap-start sm:h-36 overflow-hidden rounded-lg border border-cream/10 bg-ink transition-all hover:-translate-y-0.5 hover:border-lime/50 focus-visible:border-lime focus-visible:outline-none"
             style={{ aspectRatio: `${img.w} / ${img.h}` }}
           >
             <img

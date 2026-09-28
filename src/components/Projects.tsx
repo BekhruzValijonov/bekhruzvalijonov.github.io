@@ -27,9 +27,9 @@ export default function Projects() {
                 </p>
               </Reveal>
 
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
                 {items.map((p, i) => (
-                  <Reveal key={p.index} delay={(i % 2) * 0.08}>
+                  <Reveal key={p.index} delay={(i % 2) * 0.08} className="min-w-0">
                     <ProjectCard project={p} offset={i % 2 === 1} />
                   </Reveal>
                 ))}

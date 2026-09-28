@@ -5,12 +5,12 @@ import ProjectGallery from "./ProjectGallery";
 export default function ProjectCard({ project: p, offset }: { project: Project; offset: boolean }) {
   return (
     <article
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-cream/10 bg-ink-2/60 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-lime/40 md:p-9 ${
-        offset ? "md:mt-12" : ""
+      className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-cream/10 bg-ink-2/60 p-5 transition-all sm:p-7 duration-500 hover:-translate-y-1 hover:border-lime/40 md:p-9 ${
+        offset ? "lg:mt-12" : ""
       }`}
     >
       <div className="mb-6 flex items-start justify-between">
-        <span className="font-display text-5xl text-faint transition-colors duration-500 group-hover:text-lime">
+        <span className="font-display text-4xl text-faint sm:text-5xl transition-colors duration-500 group-hover:text-lime">
           {p.index}
         </span>
         {p.links?.[0] ? (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import type { ProjectImage } from "../data";
@@ -9,6 +9,9 @@ type Props = { images: ProjectImage[]; index: number | null; onClose: () => void
 export default function Lightbox({ images, index, onClose }: Props) {
   const [i, setI] = useState(index ?? 0);
   const open = index !== null;
+  const touchX = useRef<number | null>(null);
+  const next = () => setI((n) => (n + 1) % images.length);
+  const prev = () => setI((n) => (n - 1 + images.length) % images.length);
 
   useEffect(() => {
     if (index !== null) setI(index);
@@ -55,11 +58,20 @@ export default function Lightbox({ images, index, onClose }: Props) {
               onClick={onClose}
               className="rounded-full border border-cream/15 px-4 py-2 text-cream transition-colors hover:border-cream/40"
             >
-              Close · Esc
+              Close<span className="hidden md:inline"> · Esc</span>
             </button>
           </div>
 
-          <div className="relative flex min-h-0 flex-1 items-center justify-center px-4 md:px-20">
+          <div
+            className="relative flex min-h-0 flex-1 items-center justify-center px-3 md:px-20"
+            onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+            onTouchEnd={(e) => {
+              if (touchX.current === null) return;
+              const dx = e.changedTouches[0].clientX - touchX.current;
+              touchX.current = null;
+              if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+            }}
+          >
             <motion.img
               key={img.src}
               src={img.src}
@@ -74,14 +86,15 @@ export default function Lightbox({ images, index, onClose }: Props) {
             />
             {images.length > 1 && (
               <>
-                <NavButton side="left" onClick={(e) => { e.stopPropagation(); setI((n) => (n - 1 + images.length) % images.length); }} />
-                <NavButton side="right" onClick={(e) => { e.stopPropagation(); setI((n) => (n + 1) % images.length); }} />
+                <NavButton side="left" onClick={(e) => { e.stopPropagation(); prev(); }} />
+                <NavButton side="right" onClick={(e) => { e.stopPropagation(); next(); }} />
               </>
             )}
           </div>
 
-          <div className="px-5 pt-3 pb-5 text-center">
-            <p className="text-sm text-cream">{img.alt}</p>
+          <div className="px-5 pt-3 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-center">
+            <p className="mx-auto max-w-xl text-sm text-cream">{img.alt}</p>
+            {images.length > 1 && <p className="mt-1 text-xs text-faint md:hidden">Swipe to see more</p>}
             {images.length > 1 && (
               <div className="mt-3 flex justify-center gap-1.5" onClick={(e) => e.stopPropagation()}>
                 {images.map((im, n) => (
@@ -109,7 +122,7 @@ function NavButton({ side, onClick }: { side: "left" | "right"; onClick: (e: Rea
       type="button"
       aria-label={side === "left" ? "Previous screen" : "Next screen"}
       onClick={onClick}
-      className={`absolute top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-cream/15 bg-ink/70 text-cream transition-colors hover:border-lime hover:text-lime md:flex ${
+      className={`absolute top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-cream/15 bg-ink/70 text-cream transition-colors hover:border-lime hover:text-lime sm:flex ${
         side === "left" ? "left-4" : "right-4"
       }`}
     >
