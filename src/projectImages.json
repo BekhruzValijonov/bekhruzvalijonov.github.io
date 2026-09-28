@@ -1,0 +1,228 @@
+{
+ "queue-ecosystem": [
+  {
+   "src": "projects/queue-ecosystem/01.webp",
+   "thumb": "projects/queue-ecosystem/01-thumb.webp",
+   "alt": "Waiting-hall TV board with called tickets, video and running line",
+   "w": 1600,
+   "h": 900
+  },
+  {
+   "src": "projects/queue-ecosystem/02.webp",
+   "thumb": "projects/queue-ecosystem/02-thumb.webp",
+   "alt": "Self-service kiosk: service selection with live wait estimates",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/queue-ecosystem/03.webp",
+   "thumb": "projects/queue-ecosystem/03-thumb.webp",
+   "alt": "Device launcher: role and hardware configuration",
+   "w": 1600,
+   "h": 1000
+  },
+  {
+   "src": "projects/queue-ecosystem/04.webp",
+   "thumb": "projects/queue-ecosystem/04-thumb.webp",
+   "alt": "Ticket template designer with live 80 mm preview",
+   "w": 1600,
+   "h": 1000
+  }
+ ],
+ "reception": [
+  {
+   "src": "projects/reception/01.webp",
+   "thumb": "projects/reception/01-thumb.webp",
+   "alt": "Live board: queue, long waits and every operator's status",
+   "w": 1600,
+   "h": 1143
+  },
+  {
+   "src": "projects/reception/02.webp",
+   "thumb": "projects/reception/02-thumb.webp",
+   "alt": "Operator shift history: activity timeline and service map",
+   "w": 1600,
+   "h": 1143
+  },
+  {
+   "src": "projects/reception/03.webp",
+   "thumb": "projects/reception/03-thumb.webp",
+   "alt": "Issuing a ticket: service sections and VIP mode",
+   "w": 1600,
+   "h": 1143
+  },
+  {
+   "src": "projects/reception/04.webp",
+   "thumb": "projects/reception/04-thumb.webp",
+   "alt": "Ctrl+K search across the queue",
+   "w": 1600,
+   "h": 1143
+  }
+ ],
+ "tv-board": [
+  {
+   "src": "projects/tv-board/01.webp",
+   "thumb": "projects/tv-board/01-thumb.webp",
+   "alt": "Landscape board: six called tickets, video slot, running line",
+   "w": 1600,
+   "h": 900
+  },
+  {
+   "src": "projects/tv-board/02.webp",
+   "thumb": "projects/tv-board/02-thumb.webp",
+   "alt": "Portrait board variant",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/tv-board/03.webp",
+   "thumb": "projects/tv-board/03-thumb.webp",
+   "alt": "Exchange-rate footer variant",
+   "w": 1600,
+   "h": 900
+  }
+ ],
+ "admin": [
+  {
+   "src": "projects/admin/01.webp",
+   "thumb": "projects/admin/01-thumb.webp",
+   "alt": "Realtime monitoring with map drill-down and summary KPIs",
+   "w": 1600,
+   "h": 1000
+  },
+  {
+   "src": "projects/admin/02.webp",
+   "thumb": "projects/admin/02-thumb.webp",
+   "alt": "History analytics: counts, served ratio, tickets by hour",
+   "w": 1600,
+   "h": 1000
+  },
+  {
+   "src": "projects/admin/03.webp",
+   "thumb": "projects/admin/03-thumb.webp",
+   "alt": "Exchange-rates editor",
+   "w": 1600,
+   "h": 1000
+  }
+ ],
+ "kiosks": [
+  {
+   "src": "projects/kiosks/01.webp",
+   "thumb": "projects/kiosks/01-thumb.webp",
+   "alt": "Branded kiosk edition: service list",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/kiosks/02.webp",
+   "thumb": "projects/kiosks/02-thumb.webp",
+   "alt": "Redeeming a booking code on the keypad",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/kiosks/03.webp",
+   "thumb": "projects/kiosks/03-thumb.webp",
+   "alt": "Ticket printing dialog",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/kiosks/04.webp",
+   "thumb": "projects/kiosks/04-thumb.webp",
+   "alt": "Language selection with promo video and running line",
+   "w": 1600,
+   "h": 2845
+  }
+ ],
+ "operator": [
+  {
+   "src": "projects/operator/01.webp",
+   "thumb": "projects/operator/01-thumb.webp",
+   "alt": "Serving a ticket: allowed actions and live counters",
+   "w": 1600,
+   "h": 1000
+  },
+  {
+   "src": "projects/operator/02.webp",
+   "thumb": "projects/operator/02-thumb.webp",
+   "alt": "Redirecting to other services in sequence mode",
+   "w": 1600,
+   "h": 1000
+  },
+  {
+   "src": "projects/operator/03.webp",
+   "thumb": "projects/operator/03-thumb.webp",
+   "alt": "Sign-in by workspace and PIN",
+   "w": 1600,
+   "h": 1000
+  }
+ ],
+ "field": [
+  {
+   "src": "projects/field/01.webp",
+   "thumb": "projects/field/01-thumb.webp",
+   "alt": "Inspection route with GPS track and checkpoints",
+   "w": 1600,
+   "h": 3463
+  },
+  {
+   "src": "projects/field/02.webp",
+   "thumb": "projects/field/02-thumb.webp",
+   "alt": "Bluetooth scan of nearby sensors",
+   "w": 1600,
+   "h": 3463
+  },
+  {
+   "src": "projects/field/03.webp",
+   "thumb": "projects/field/03-thumb.webp",
+   "alt": "Sensor readings: battery, temperature, firmware",
+   "w": 1600,
+   "h": 3463
+  },
+  {
+   "src": "projects/field/04.webp",
+   "thumb": "projects/field/04-thumb.webp",
+   "alt": "Tuning sensor settings over Bluetooth",
+   "w": 1600,
+   "h": 3463
+  }
+ ],
+ "calora": [
+  {
+   "src": "projects/calora/01.webp",
+   "thumb": "projects/calora/01-thumb.webp",
+   "alt": "Home: streak, goal verdict and calorie ring",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/calora/02.webp",
+   "thumb": "projects/calora/02-thumb.webp",
+   "alt": "Meal photo scan with provider disclosure",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/calora/03.webp",
+   "thumb": "projects/calora/03-thumb.webp",
+   "alt": "Statistics: three weeks against the target corridor",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/calora/04.webp",
+   "thumb": "projects/calora/04-thumb.webp",
+   "alt": "AI coach that reads the diary",
+   "w": 1600,
+   "h": 2845
+  },
+  {
+   "src": "projects/calora/05.webp",
+   "thumb": "projects/calora/05-thumb.webp",
+   "alt": "Goal verdict breakdown",
+   "w": 1600,
+   "h": 2845
+  }
+ ]
+}

@@ -70,6 +70,13 @@ export const projectGroups = [
   { company: "Imaan-Tech", title: "Imaan-Tech", caption: "Learning platform, freelance." },
 ] as const satisfies readonly ProjectGroup[];
 
+import projectImages from "./projectImages.json";
+
+export type ProjectImage = { src: string; thumb: string; alt: string; w: number; h: number };
+
+/** Screens for a project, keyed by the folder name under public/projects. */
+export const galleries: Record<string, ProjectImage[]> = projectImages;
+
 export type Project = {
   index: string;
   title: string;
@@ -78,6 +85,8 @@ export type Project = {
   blurb: string;
   points: string[];
   stack?: string[];
+  /** Key into `galleries`; the card shows those screens as a strip and a lightbox. */
+  gallery?: keyof typeof projectImages;
   links?: { label: string; href: string }[];
   note?: string;
   credentials?: { role: string; login: string; password: string }[];
@@ -87,6 +96,7 @@ export const projects: Project[] = [
   {
     index: "01",
     title: "Electronic Queue Ecosystem",
+    gallery: "queue-ecosystem",
     company: "Leerybit",
     blurb:
       "One system that takes a person from a ticket at the kiosk to a called number on the TV board and a finished visit at the desk, running unattended in halls across the country.",
@@ -100,6 +110,7 @@ export const projects: Project[] = [
   {
     index: "02",
     title: "Reception Desktop",
+    gallery: "reception",
     company: "Leerybit",
     blurb:
       "The front-desk view of the whole hall: who is waiting, who is being served and for how long, ticket issuing and every operator's shift history in one window.",
@@ -113,6 +124,7 @@ export const projects: Project[] = [
   {
     index: "03",
     title: "Android TV Queue Board",
+    gallery: "tv-board",
     company: "Leerybit",
     blurb:
       "The board people watch while they wait: called numbers, video playlist and branding on inexpensive TV boxes with weak Wi-Fi. Rewritten natively for Android TV.",
@@ -125,6 +137,7 @@ export const projects: Project[] = [
   {
     index: "04",
     title: "Real-time Admin & Analytics",
+    gallery: "admin",
     company: "Leerybit",
     blurb:
       "Where the network is run: live and historical statistics down to a single location, and remote control of every device in the field.",
@@ -151,6 +164,7 @@ export const projects: Project[] = [
   {
     index: "06",
     title: "Self-service Kiosks",
+    gallery: "kiosks",
     company: "Leerybit",
     blurb:
       "Touch terminals where the visit starts: choose a service, get a printed ticket, redeem a booking, rate the visit.",
@@ -163,6 +177,7 @@ export const projects: Project[] = [
   {
     index: "07",
     title: "Operator Workstation",
+    gallery: "operator",
     company: "Leerybit",
     blurb:
       "The tool an operator uses hundreds of times a day to call, serve, redirect and finish visitors, with the allowed flow enforced by a state machine.",
@@ -174,6 +189,7 @@ export const projects: Project[] = [
   {
     index: "08",
     title: "Hardware & Field Tools",
+    gallery: "field",
     company: "Leerybit",
     blurb:
       "Software that meets the physical world: sensors in the field, firmware updates over the air, remote valves and industrial protocols.",
@@ -210,6 +226,7 @@ export const projects: Project[] = [
   {
     index: "11",
     title: "Calora AI",
+    gallery: "calora",
     company: "Maven Systems",
     blurb:
       "A nutrition tracker that keeps everything on the phone: no account, no backend, no analytics. AI runs on the user's own provider and key.",
@@ -249,36 +266,54 @@ export const projects: Project[] = [
   },
 ];
 
-export type SkillGroup = { label: string; items: string[] };
+export type SkillGroup = { label: string; text: string; tools: string[] };
 
+/** How I work: each area is a decision and the reason behind it, tools listed second. */
 export const skills: SkillGroup[] = [
   {
-    label: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "Nuxt.js", "Redux Toolkit", "Zustand", "SWR"],
+    label: "Desktop",
+    text: "Tauri when the app needs a small binary and native code next to the UI: a Rust thread that watches the network, a device-identity plugin, builds for Windows, macOS, Linux and Android from one repo. Electron where the app has to talk to USB thermal printers and serial ports through Node.",
+    tools: ["Tauri 2", "Rust", "Electron", "electron-updater", "ESC/POS"],
   },
   {
-    label: "Styling & UI",
-    items: ["HTML", "CSS", "SCSS", "Tailwind CSS", "MUI", "Storybook"],
+    label: "Mobile & TV",
+    text: "A web UI in a Tauri shell with Kotlin plugins when that is enough: Bluetooth scanning in a foreground service, camera, secure storage. Fully native Kotlin and Compose when it must run 24/7 on a low-end TV box and recover from decoder and network failures on its own.",
+    tools: ["Kotlin", "Jetpack Compose", "Media3", "Ktor", "Android BLE", "Framework7"],
   },
   {
-    label: "Desktop, Mobile & TV",
-    items: ["Tauri", "Electron", "React Native", "Kotlin", "Jetpack Compose", "Android TV", "Framework7"],
+    label: "Web applications",
+    text: "React and TypeScript everywhere, Next.js for admin panels that need server routes next to the pages. Large admin surfaces are generated from schemas and role matrices rather than hand-written screen by screen, and every string goes through i18n from day one.",
+    tools: ["React 19", "TypeScript", "Next.js", "Vite", "Tailwind", "Zustand", "amCharts", "ECharts"],
   },
   {
-    label: "Backend & API",
-    items: ["Node.js", "Prisma", "PostgreSQL", "REST", "GraphQL", "WebSocket"],
+    label: "Real-time & data",
+    text: "A snapshot over GraphQL, then patches from an event bus over WebSocket, with a periodic full resync to heal lost messages. Timers and counters that update every second are written to the DOM directly so hundreds of them never re-render the page.",
+    tools: ["WebSocket", "GraphQL", "Socket.IO", "gql-query-builder"],
   },
   {
-    label: "Data Visualization",
-    items: ["amCharts", "D3.js", "Mapbox", "Three.js"],
+    label: "Backend & APIs",
+    text: "NestJS with Prisma on PostgreSQL. Multi-tenancy by scoping every query to the organization in the token, short-lived access tokens with rotated refresh tokens, background jobs in a queue when Redis is there and inline when it is not.",
+    tools: ["NestJS", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Docker"],
   },
   {
-    label: "AI",
-    items: ["OpenAI / Anthropic / Gemini APIs", "DeepSeek", "MediaPipe"],
+    label: "Offline & sync",
+    text: "Local-first where the network cannot be trusted: SQLite on the device for a product with no backend, PouchDB with two-way CouchDB replication for field apps, and a policy that limits how long a device may stay offline.",
+    tools: ["SQLite", "PouchDB", "CouchDB", "IndexedDB"],
   },
   {
-    label: "Tools",
-    items: ["Git", "Linux", "Vite", "Rollup", "Webpack", "Vitest", "Jest"],
+    label: "Hardware",
+    text: "Thermal printers over USB, LED displays over RS485, sensors over Bluetooth, firmware flashing in checksummed sectors, face detection at the kiosk. I read the protocol document first and write the transport myself when no library fits.",
+    tools: ["Web Bluetooth", "BLE", "RS485", "Modbus", "MediaPipe", "CRC-16"],
+  },
+  {
+    label: "Platform & quality",
+    text: "Shared UI kit and client SDK with per-module tree shaking, stories for every component and CI gates that fail on a single console error. Vitest with Testing Library for behaviour, not snapshots; TypeScript strict so a missing translation key does not compile.",
+    tools: ["Storybook", "Vitest", "Testing Library", "Rollup", "GitLab CI", "GitHub Actions"],
+  },
+  {
+    label: "AI in products",
+    text: "Provider-agnostic: one registry entry per provider, the user's own key kept in the OS secure store, every model answer treated as a draft the user confirms. Audio and photo pipelines on the client, with retries and model fallbacks when a provider fails.",
+    tools: ["OpenAI", "Anthropic", "Gemini", "OpenRouter", "Ollama", "Web Audio"],
   },
 ];
 

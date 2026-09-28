@@ -1,4 +1,5 @@
-import type { Project } from "../data";
+import { galleries, type Project } from "../data";
+import ProjectGallery from "./ProjectGallery";
 
 /** One project in the Projects grid: what it is, what I built, links and optional demo logins. */
 export default function ProjectCard({ project: p, offset }: { project: Project; offset: boolean }) {
@@ -31,6 +32,8 @@ export default function ProjectCard({ project: p, offset }: { project: Project; 
 
       <h4 className="font-display text-2xl leading-tight text-cream md:text-3xl">{p.title}</h4>
       <p className="mt-3 text-muted">{p.blurb}</p>
+
+      {p.gallery && galleries[p.gallery] && <ProjectGallery images={galleries[p.gallery]} />}
 
       <ul className="mt-5 space-y-2">
         {p.points.map((pt, j) => (
