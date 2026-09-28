@@ -1,6 +1,6 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
+import Principles from "./components/Principles";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
@@ -21,7 +21,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Marquee />
+        <Principles />
         <About />
         <Experience />
         <Projects />

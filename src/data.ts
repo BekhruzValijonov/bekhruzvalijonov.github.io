@@ -1,6 +1,6 @@
 export const profile = {
   name: "Bekhruz Valijonov",
-  role: "Frontend / Full-Stack Developer",
+  role: "Software Engineer",
   location: "Tashkent, Uzbekistan",
   email: "valijonovbekhruz@gmail.com",
   phone: "+998 (99) 044-36-44",
@@ -10,7 +10,7 @@ export const profile = {
   linkedinLabel: "in/bekhruz-valijonov",
   available: true,
   summary:
-    "Frontend-focused full-stack developer with three years of commercial experience and the founder of Maven Systems. I build web, desktop, mobile and Android TV applications — mostly data-heavy admin panels, real-time dashboards and apps for kiosks and other devices — along with the APIs behind them.",
+    "I work on an electronic queue ecosystem that serves millions of people across the country: 13 applications on one shared UI kit and client SDK, running on kiosks, Android TV boxes, Windows, macOS and Linux desktops and phones, in 6 languages. My part ranges from the reception desktop and the native TV board to the update server that keeps the whole device fleet current, Bluetooth firmware updates for sensors, and a booking platform with 182 API endpoints. In 2026 I founded Maven Systems and shipped its first product on Google Play.",
 };
 
 export type Experience = {
@@ -31,13 +31,12 @@ export const experience: Experience[] = [
     period: "Oct 2023 — Present",
     current: true,
     points: [
-      "Develop frontend applications for IQueue, a queue-management system used in bank branches: admin panel, operator workstation, reception desk, self-service kiosks and waiting-room TV screens.",
-      "Develop components for the company's shared React UI library and maintain the client SDK used by all IQueue applications.",
-      "Built Qabul, a booking and live-queue platform with customer and staff mobile apps, web admin panels and a backend API.",
-      "Rewrote the waiting-room TV app as a native Android TV application.",
-      "Delivered internal tools for traffic-violation moderation, field meter inspections and IoT device management.",
+      "Develop the IQueue electronic queue ecosystem: 13 applications across kiosks, TV boards, operator and reception workstations and a real-time admin panel, sharing one UI kit and client SDK.",
+      "Own the reception desktop (Windows, macOS, Linux, Android; 173 automated tests) and the native Android TV board (Kotlin, 131 tests, 6 languages) end to end.",
+      "Built the over-the-air update server and the version-blocking policy that keep hundreds of unattended devices on supported builds without a technician visit.",
+      "Designed and built Qabul, a multi-tenant booking and live-queue platform: 33 data models, 182 endpoints, business portal, admin console, client and scanner apps.",
+      "Work with hardware: 80 mm thermal printers, TV boxes, LED displays, face detection at the kiosk and firmware flashing over Bluetooth with per-sector checksums.",
     ],
-    stack: ["React", "TypeScript", "Next.js", "Tauri", "Electron", "Kotlin", "WebSocket"],
   },
   {
     company: "Maven Systems",
@@ -46,10 +45,9 @@ export const experience: Experience[] = [
     period: "2026 — Present",
     current: true,
     points: [
-      "Founded Maven Systems; its first product is Calora AI, a privacy-focused nutrition tracker for Android and desktop.",
-      "Designed and developed the app end to end: on-device data storage, AI meal recognition with the user's own API key, statistics and localization in three languages.",
+      "Founded the company and shipped Calora AI on Google Play: a local-first nutrition tracker with no backend, a 7,800-item food catalog and support for six AI providers.",
+      "Own everything from product decisions to three native Android plugins, the data pipeline, store listing and releases.",
     ],
-    stack: ["Tauri", "React", "TypeScript", "Rust", "SQLite"],
   },
   {
     company: "Imaan-Tech",
@@ -57,11 +55,9 @@ export const experience: Experience[] = [
     location: "Remote",
     period: "Jan 2026 — May 2026",
     points: [
-      "Developed two web applications for an education platform: an admin dashboard and a student portal.",
-      "Implemented admin modules for finance, payroll, reports, courses, attendance and user roles.",
-      "Built AI-assisted learning tools for chat, speaking and writing practice, and Face ID attendance with geofencing.",
+      "Built a gamified learning app on my own: 23 screens, AI speaking evaluation with audio recording, a voice-reactive 3D tutor on custom shaders.",
+      "In the admin dashboard, delivered the finance modules, access control for three roles and localization into three languages.",
     ],
-    stack: ["React", "TypeScript", "Tailwind", "Zustand"],
   },
 ];
 
@@ -69,9 +65,9 @@ export type ProjectGroup = { company: string; title: string; caption: string };
 
 /** Projects section is split into these groups, in this order. */
 export const projectGroups = [
-  { company: "Imaan-Tech", title: "Imaan-Tech", caption: "Education platform, freelance." },
-  { company: "Leerybit", title: "Leerybit", caption: "IQueue queue-management system for bank branches." },
-  { company: "Maven Systems", title: "Maven Systems", caption: "My own company." },
+  { company: "Leerybit", title: "Leerybit", caption: "Electronic queue ecosystem, booking platform, camera network and IoT tools." },
+  { company: "Maven Systems", title: "Maven Systems", caption: "My own company. Everything here is mine end to end." },
+  { company: "Imaan-Tech", title: "Imaan-Tech", caption: "Learning platform, freelance." },
 ] as const satisfies readonly ProjectGroup[];
 
 export type Project = {
@@ -81,7 +77,7 @@ export type Project = {
   company: (typeof projectGroups)[number]["company"];
   blurb: string;
   points: string[];
-  stack: string[];
+  stack?: string[];
   links?: { label: string; href: string }[];
   note?: string;
   credentials?: { role: string; login: string; password: string }[];
@@ -90,132 +86,165 @@ export type Project = {
 export const projects: Project[] = [
   {
     index: "01",
-    title: "Edu Admin Dashboard",
-    company: "Imaan-Tech",
-    blurb: "Management dashboard for schools and learning centers.",
+    title: "Electronic Queue Ecosystem",
+    company: "Leerybit",
+    blurb:
+      "One system that takes a person from a ticket at the kiosk to a called number on the TV board and a finished visit at the desk, running unattended in halls across the country.",
     points: [
-      "Finance modules: student payments and debts, teacher salaries, expenses and invoices, with Excel export.",
-      "KPI dashboards, reports, role-based access and camera management with AI lesson-video analysis.",
+      "13 applications on one UI kit and client SDK: kiosks, TV boards, operator and reception workstations, a launcher and an admin panel, in 6 languages including Karakalpak.",
+      "Every screen in the hall is live: a ticket issued, called or finished reaches kiosks, boards, desks and dashboards through one event bus within a second.",
+      "One installed binary becomes a kiosk, TV board, operator console, feedback pad or manager screen depending on the device it lands on, on Windows, Linux and macOS.",
+      "Devices run for years without a technician: they reconnect after network drops, resync after sleep, update themselves over the air and stop running builds that were blacklisted.",
     ],
-    stack: ["React", "TypeScript", "Tailwind", "Zustand"],
-    links: [{ label: "admin.imaantech.uz", href: "https://admin.imaantech.uz" }],
-    credentials: [{ role: "Admin", login: "+998940962906", password: "string" }],
   },
   {
     index: "02",
-    title: "Student Portal & AI Tools",
-    company: "Imaan-Tech",
-    blurb: "Student-facing portal of the same education platform.",
+    title: "Reception Desktop",
+    company: "Leerybit",
+    blurb:
+      "The front-desk view of the whole hall: who is waiting, who is being served and for how long, ticket issuing and every operator's shift history in one window.",
     points: [
-      "Courses, video lessons, tests, homework, attendance and a rating leaderboard.",
-      "AI practice tools for chat, speaking and writing, and Face ID attendance with geofencing.",
+      "Built for a desk that stays open all day: a native watcher detects the network coming back and the app repairs its queue state on its own; after 30 seconds asleep it reconnects in full.",
+      "Queue state is patched live from events and fully resynced every 5 minutes, so lost messages and the midnight rollover never leave stale tickets on screen.",
+      "Timers for hundreds of tickets tick every second without re-rendering the page, and turn amber and red as planned service time runs out.",
+      "Native device identity plugin for desktop and Android, Gantt and serpentine shift charts, Ctrl+K search; 173 automated tests, 15 releases.",
     ],
-    stack: ["React", "TypeScript", "Tailwind"],
-    links: [{ label: "edu.imaantech.uz", href: "https://edu.imaantech.uz" }],
-    credentials: [{ role: "Student", login: "+998200272727", password: "string" }],
   },
   {
     index: "03",
-    title: "IQueue Admin Panel",
+    title: "Android TV Queue Board",
     company: "Leerybit",
-    blurb: "Web panel for configuring and monitoring the queue system across bank branches.",
+    blurb:
+      "The board people watch while they wait: called numbers, video playlist and branding on inexpensive TV boxes with weak Wi-Fi. Rewritten natively for Android TV.",
     points: [
-      "Developed configuration pages for branches, operators, services, devices, playlists and scenarios.",
-      "Built a drag-and-drop kiosk layout editor, exchange-rate scheduling and operator activity charts.",
+      "Never misses a call: a 40-second heartbeat detects silently dead connections, reconnects with backoff, and every new event cancels and restarts the refresh in flight.",
+      "Looks identical on 32-inch and 75-inch screens: the web board's scale rules were ported one to one into the native layout, ignoring the box's font settings.",
+      "Reads branding themes pushed from the server, keeps a stable device identity even when Android hides the hardware address, starts on boot; 131 unit tests.",
     ],
-    stack: ["Next.js", "React", "amCharts", "WebSocket"],
   },
   {
     index: "04",
-    title: "Qabul Booking Platform",
+    title: "Real-time Admin & Analytics",
     company: "Leerybit",
-    blurb: "Online booking and live-queue platform for service businesses.",
+    blurb:
+      "Where the network is run: live and historical statistics down to a single location, and remote control of every device in the field.",
     points: [
-      "Built customer and staff mobile apps with map search, booking, QR check-in and live queue position.",
-      "Developed the business and super-admin web panels and the backend API.",
+      "Update server for the fleet: one zip upload releases a version to every device; downloads resume from where they stopped and are throttled per server so hundreds of devices never choke one link.",
+      "Kiosk menu editor: a tree of service sections with drag-and-drop ordering and cascading removal, applied to a location instantly and covered by unit tests.",
+      "Exchange-rate rules by country, region, city, district or location with validity windows, where the most specific rule wins; an editor for operator scenarios.",
+      "A map that drills from country to district with region statistics computed off the main thread, 9 user roles and 6 interface languages.",
     ],
-    stack: ["React", "Tauri", "PostgreSQL"],
   },
   {
     index: "05",
-    title: "Design System & Client SDK",
+    title: "Online Booking & Live Queue",
     company: "Leerybit",
-    blurb: "Shared UI library and client SDK used by all IQueue applications.",
+    blurb:
+      "A booking platform where people reserve a time, check in with a QR code and watch their place in the queue move on their phone.",
     points: [
-      "Developed components such as date and time pickers, tree select, calendars and virtualized lists.",
-      "Added TV-remote navigation and an on-screen keyboard for Android TV and kiosks; maintain the SDK.",
+      "Designed end to end: 33 data models, an API with 182 endpoints, business portal with 33 pages, admin console, client app and front-desk scanner.",
+      "Multi-tenant from day one: any number of businesses share one installation, and every query is scoped to the organization from the token.",
+      "Queue position is pushed to the phone the moment it changes; slots respect service duration, preparation and cleanup time and working hours in the business's own timezone.",
+      "Short-lived tokens with rotation, single-use check-in codes without look-alike characters, and time-limited support access where every action is audited.",
     ],
-    stack: ["React", "TypeScript", "Storybook"],
   },
   {
     index: "06",
-    title: "Operator Workstation",
+    title: "Self-service Kiosks",
     company: "Leerybit",
-    blurb: "Workstation app for bank tellers to call, serve and redirect customers.",
+    blurb:
+      "Touch terminals where the visit starts: choose a service, get a printed ticket, redeem a booking, rate the visit.",
     points: [
-      "Added shift activity timelines, a service timer and queue statistics.",
-      "Implemented scenario questions, session restore and a customer data form.",
+      "Delivered a fully branded kiosk edition on my own: booking-code keypad, wait-time estimates grouped across related services, 80 mm inverted thermal printing, 6 languages.",
+      "Visitor photo capture with on-device face detection that picks the face nearest the centre and zooms to it, so the operator sees who is coming.",
+      "Services can be limited by hours, weekdays and daily quota, and a ticket printed at reception carries the reason and operator it was issued for.",
     ],
-    stack: ["React", "TypeScript", "amCharts"],
   },
   {
     index: "07",
-    title: "Reception Desktop App",
+    title: "Operator Workstation",
     company: "Leerybit",
-    blurb: "Desktop app for branch reception staff to monitor the queue and issue tickets.",
+    blurb:
+      "The tool an operator uses hundreds of times a day to call, serve, redirect and finish visitors, with the allowed flow enforced by a state machine.",
     points: [
-      "Built the operator activity board, live queue view and ticket printing flow.",
-      "Implemented reconnection after sleep and a native device-ID plugin for desktop and Android.",
+      "Added the shift timeline, a service timer against planned time, automatic work-time logging on login and logout, and a client data form.",
+      "Hardened the action queue: scenario timeouts, action constraints, and fixes so delayed actions keep their data and fast double clicks never stall the operator.",
     ],
-    stack: ["Tauri", "React", "TypeScript", "Rust"],
   },
   {
     index: "08",
-    title: "Kiosk, TV & Launcher Apps",
+    title: "Hardware & Field Tools",
     company: "Leerybit",
-    blurb: "Customer-facing apps running on kiosks and waiting-room screens in bank branches.",
+    blurb:
+      "Software that meets the physical world: sensors in the field, firmware updates over the air, remote valves and industrial protocols.",
     points: [
-      "Developed kiosk features such as QR and booking activation and face-detection camera capture; delivered a kiosk for Ipak Yo'li Bank.",
-      "Maintain the waiting-room TV app and rewrote it as a native Android TV application.",
-      "Implemented auto-update and outdated-version blocking in the Electron launcher that runs these apps.",
+      "Firmware flashing over Bluetooth: the image goes out in 4 KB sectors of 510-byte packets, each sector verified by a checksum before the next one is sent, so packet loss never bricks a device.",
+      "A mobile inspection app that scans sensors and tracks the route in a background service, stores everything locally and syncs when a connection appears.",
+      "A dashboard for remote valve control with live device events, and a configurator for Modbus registers with byte and word order.",
     ],
-    stack: ["React", "Electron", "Kotlin", "Jetpack Compose", "MediaPipe"],
   },
   {
     index: "09",
-    title: "Traffic Violation Moderation Console",
+    title: "Traffic Camera Network Console",
     company: "Leerybit",
-    blurb: "Web console for reviewing traffic violations detected by cameras.",
+    blurb:
+      "Operations console for a camera network that records about 2 million vehicle passes a day.",
     points: [
-      "Built the review flow with role- and device-based permissions.",
-      "Added a violations registry with filters and a moderator statistics page with live updates.",
+      "Archive exports of any slice of that traffic, filtered by camera, minute, plate pattern, lane and speed, with job progress streamed live from queued to finished.",
+      "A live productivity board for moderators that applies every verdict as it happens and corrects the hourly counts when a verdict is revised.",
+      "A device verification workflow with attachments and history, and a log-scale chart that fits millions of passes and thousands of violations on one axis.",
     ],
-    stack: ["React", "TypeScript", "Socket.IO"],
   },
   {
     index: "10",
-    title: "Field & IoT Tools",
+    title: "UI Kit & Client SDK",
     company: "Leerybit",
-    blurb: "Smaller apps for field inspections and connected devices.",
+    blurb:
+      "The foundation every app in the ecosystem is built on: about 60 components, an application framework and a client SDK, consumed by 13 products.",
     points: [
-      "Contributed to an Android app for meter inspectors: Bluetooth meter readings and GPS route tracking.",
-      "Built an admin panel for smart water meters with remote valve control, and a Modbus register configurator.",
+      "Access control built into the framework: roles and attributes, login form, automatic token refresh and guards that stop users from leaving unsaved pages.",
+      "A colour picker that generates a full Material palette from one colour, wavy progress indicators and event timeline charts.",
+      "Video playback that recovers from hardware decoder failures on TV boxes, and a Material 3 library with 157 stories and about 2,000 tests whose CI fails on a single console error.",
     ],
-    stack: ["Tauri", "React", "Kotlin", "BLE"],
   },
   {
     index: "11",
     title: "Calora AI",
     company: "Maven Systems",
-    blurb: "Privacy-focused nutrition tracker for Android and desktop.",
+    blurb:
+      "A nutrition tracker that keeps everything on the phone: no account, no backend, no analytics. AI runs on the user's own provider and key.",
     points: [
-      "Data stays on the device; AI features work with the user's own API key from any major provider.",
-      "Meal photo recognition, a food database with barcode lookup, statistics and three languages.",
+      "Four ways to log a meal: photo recognition, barcode lookup with an offline cache, a 7,800-item food catalog or a saved meal, and every AI result is a draft the user confirms.",
+      "Six AI providers or a built-in model, with keys kept in the phone's secure storage and never in the database or an export.",
+      "Three native Android plugins written for this app: camera, screen insets and secure storage.",
+      "Statistics that explain themselves: every number comes with the reason behind it and one thing to do about it, computed on the device.",
     ],
-    stack: ["Tauri", "React", "TypeScript", "SQLite"],
     links: [
-      { label: "bekhruzvalijonov.github.io/calora-info", href: "https://bekhruzvalijonov.github.io/calora-info/" },
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=ai.calora.tracker" },
+      { label: "bekhruzvalijonov.github.io/calora-info", href: "https://bekhruzvalijonov.github.io/calora-info/" },
+    ],
+  },
+  {
+    index: "12",
+    title: "Learning App & AI Practice",
+    company: "Imaan-Tech",
+    blurb:
+      "A gamified language-learning app: courses, timed homework, vocabulary drills, leaderboards with leagues and AI tutors that listen and read. Built on my own.",
+    points: [
+      "Speaking practice that records the learner, returns a band score, feedback and a transcript.",
+      "A voice-reactive 3D tutor: the microphone signal is filtered and analysed in real time and drives custom shaders, so the sphere moves with the learner's voice.",
+      "23 screens, sign-up and password reset over SMS codes, and all user and course data loaded in parallel before a page renders.",
+    ],
+  },
+  {
+    index: "13",
+    title: "Learning Platform Back Office",
+    company: "Imaan-Tech",
+    blurb:
+      "Multi-tenant admin dashboard with about 58 screens: organisations, groups, lessons, attendance, homework, finance and cameras.",
+    points: [
+      "Owned the money side: salaries and payouts, expenses, billing and leave tracking, with Excel export.",
+      "Built the access matrix for three roles and localization into three languages, about 1,800 strings each.",
     ],
   },
 ];
@@ -258,22 +287,30 @@ export const education = [
   { school: "Netology · Online", program: "Advanced Frontend", period: "Jan 2023 — May 2023" },
 ];
 
-export const languages = [
-  { name: "Uzbek", level: "Native", pct: 100 },
-  { name: "Russian", level: "C2", pct: 95 },
-  { name: "English", level: "B1", pct: 55 },
+/** Short "what it's like to work with me" statements, shown right under the hero. */
+export const principles = [
+  {
+    title: "Products used by millions.",
+    text: "A queue ecosystem of 13 applications running across the country, where a bug is felt in a hall within minutes.",
+  },
+  {
+    title: "Real time, everywhere.",
+    text: "One event bus keeps kiosks, boards, desktops and dashboards on the same second, with 5-minute resyncs to heal anything lost.",
+  },
+  {
+    title: "Hardware in the loop.",
+    text: "Thermal printers, TV boxes, LED displays, face detection at the kiosk and firmware updates over Bluetooth.",
+  },
+  {
+    title: "Platform, not just screens.",
+    text: "A shared UI kit and client SDK, an update server for the whole fleet, and performance work every app depends on.",
+  },
 ];
 
-export const marqueeWords = [
-  "React",
-  "TypeScript",
-  "Next.js",
-  "Tauri",
-  "Electron",
-  "Kotlin",
-  "Android TV",
-  "PostgreSQL",
-  "GraphQL",
-  "WebSocket",
-  "amCharts",
+/** What I'm doing right now, shown next to the summary in About. */
+export const now = [
+  { label: "Working on", value: "IQueue at Leerybit", detail: "Electronic queue ecosystem used across the country" },
+  { label: "Building", value: "Calora AI at Maven Systems", detail: "Privacy-first nutrition tracker" },
+  { label: "Based in", value: "Tashkent", detail: "UTC+5, remote-friendly" },
+  { label: "Open to", value: "Contract & freelance work", detail: "Web, desktop, mobile" },
 ];

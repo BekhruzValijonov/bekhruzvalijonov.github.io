@@ -1,6 +1,6 @@
 import type { Project } from "../data";
 
-/** One project in the Projects grid: summary, highlights, links, demo logins and stack. */
+/** One project in the Projects grid: what it is, what I built, links and optional demo logins. */
 export default function ProjectCard({ project: p, offset }: { project: Project; offset: boolean }) {
   return (
     <article
@@ -90,16 +90,18 @@ export default function ProjectCard({ project: p, offset }: { project: Project; 
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2">
-          {p.stack.map((s) => (
-            <span
-              key={s}
-              className="rounded-full border border-cream/10 px-3 py-1 font-mono text-[11px] tracking-wide text-muted"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
+        {p.stack && (
+          <div className="flex flex-wrap gap-2">
+            {p.stack.map((s) => (
+              <span
+                key={s}
+                className="rounded-full border border-cream/10 px-3 py-1 font-mono text-[11px] tracking-wide text-muted"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </article>
   );

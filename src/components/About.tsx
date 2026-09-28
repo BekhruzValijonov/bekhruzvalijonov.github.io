@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
-import { profile, languages } from "../data";
+import { profile, now } from "../data";
 
 export default function About() {
   return (
@@ -11,9 +11,9 @@ export default function About() {
         <div className="md:col-span-7">
           <Reveal>
             <p className="font-display text-3xl leading-[1.25] font-light text-cream sm:text-4xl md:text-[2.7rem]">
-              I build clear, dependable interfaces for{" "}
-              <span className="italic text-lime">complex, data-heavy products</span> — and the systems
-              behind them.
+              I solve problems at the scale of{" "}
+              <span className="italic text-lime">a whole country's queues</span> — from the kiosk in the
+              hall to the dashboard at headquarters.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -22,24 +22,27 @@ export default function About() {
         </div>
 
         <div className="md:col-span-5 md:pl-8">
-          <Reveal delay={0.15} className="space-y-6">
+          <Reveal delay={0.15}>
             <div className="flex items-baseline justify-between border-b border-cream/10 pb-4">
-              <span className="font-mono text-xs tracking-widest text-faint uppercase">Languages</span>
+              <span className="font-mono text-xs tracking-widest text-faint uppercase">Now</span>
+              {profile.available && (
+                <span className="flex items-center gap-2 font-mono text-xs text-lime">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-lime" />
+                  Available
+                </span>
+              )}
             </div>
-            {languages.map((l) => (
-              <div key={l.name}>
-                <div className="mb-2 flex items-baseline justify-between">
-                  <span className="text-cream">{l.name}</span>
-                  <span className="font-mono text-xs text-muted">{l.level}</span>
+            <dl className="divide-y divide-cream/10">
+              {now.map((n) => (
+                <div key={n.label} className="grid grid-cols-[6.5rem_1fr] gap-4 py-4">
+                  <dt className="font-mono text-xs tracking-widest text-faint uppercase">{n.label}</dt>
+                  <dd>
+                    <p className="text-cream">{n.value}</p>
+                    <p className="text-sm text-muted">{n.detail}</p>
+                  </dd>
                 </div>
-                <div className="h-px w-full bg-cream/10">
-                  <div
-                    className="h-px bg-lime transition-all"
-                    style={{ width: `${l.pct}%` }}
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </dl>
           </Reveal>
         </div>
       </div>
