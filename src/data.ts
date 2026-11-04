@@ -3,7 +3,6 @@ export const profile = {
   role: "Software Engineer",
   location: "Tashkent, Uzbekistan",
   email: "valijonovbekhruz@gmail.com",
-  phone: "+998 (99) 044-36-44",
   github: "https://github.com/BekhruzValijonov",
   githubLabel: "github.com/BekhruzValijonov",
   linkedin: "https://www.linkedin.com/in/bekhruz-valijonov-95917b237",

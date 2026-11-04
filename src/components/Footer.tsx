@@ -7,7 +7,6 @@ const socials = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
   { label: "GitHub", value: profile.githubLabel, href: profile.github },
   { label: "LinkedIn", value: profile.linkedinLabel, href: profile.linkedin },
-  { label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/[^+\d]/g, "")}` },
 ];
 
 export default function Footer() {
@@ -29,7 +28,7 @@ export default function Footer() {
           </a>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-cream/10 bg-cream/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-cream/10 bg-cream/10 md:grid-cols-3">
           {socials.map((s, i) => (
             <motion.a
               key={s.label}
