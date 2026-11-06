@@ -182,7 +182,6 @@ export const projects: Project[] = [
   {
     index: "08",
     title: "Hardware & Field Tools",
-    gallery: "field",
     company: "Leerybit",
     blurb:
       "Software that meets the physical world: sensors in the field, firmware updates over the air, remote valves and industrial protocols.",

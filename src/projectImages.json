@@ -1,34 +1,4 @@
 {
- "field": [
-  {
-   "src": "projects/field/01.webp",
-   "thumb": "projects/field/01-thumb.webp",
-   "alt": "Inspection route with GPS track and checkpoints",
-   "w": 1600,
-   "h": 3463
-  },
-  {
-   "src": "projects/field/02.webp",
-   "thumb": "projects/field/02-thumb.webp",
-   "alt": "Bluetooth scan of nearby sensors",
-   "w": 1600,
-   "h": 3463
-  },
-  {
-   "src": "projects/field/03.webp",
-   "thumb": "projects/field/03-thumb.webp",
-   "alt": "Sensor readings: battery, temperature, firmware",
-   "w": 1600,
-   "h": 3463
-  },
-  {
-   "src": "projects/field/04.webp",
-   "thumb": "projects/field/04-thumb.webp",
-   "alt": "Tuning sensor settings over Bluetooth",
-   "w": 1600,
-   "h": 3463
-  }
- ],
  "calora": [
   {
    "src": "projects/calora/01.webp",
