@@ -95,7 +95,6 @@ export const projects: Project[] = [
   {
     index: "01",
     title: "Electronic Queue Ecosystem",
-    gallery: "queue-ecosystem",
     company: "Leerybit",
     blurb:
       "One system that takes a person from a ticket at the kiosk to a called number on the TV board and a finished visit at the desk, running unattended in halls across the country.",
@@ -109,7 +108,6 @@ export const projects: Project[] = [
   {
     index: "02",
     title: "Reception Desktop",
-    gallery: "reception",
     company: "Leerybit",
     blurb:
       "The front-desk view of the whole hall: who is waiting, who is being served and for how long, ticket issuing and every operator's shift history in one window.",
@@ -123,7 +121,6 @@ export const projects: Project[] = [
   {
     index: "03",
     title: "Android TV Queue Board",
-    gallery: "tv-board",
     company: "Leerybit",
     blurb:
       "The board people watch while they wait: called numbers, video playlist and branding on inexpensive TV boxes with weak Wi-Fi. Rewritten natively for Android TV.",
@@ -136,7 +133,6 @@ export const projects: Project[] = [
   {
     index: "04",
     title: "Real-time Admin & Analytics",
-    gallery: "admin",
     company: "Leerybit",
     blurb:
       "Where the network is run: live and historical statistics down to a single location, and remote control of every device in the field.",
@@ -163,7 +159,6 @@ export const projects: Project[] = [
   {
     index: "06",
     title: "Self-service Kiosks",
-    gallery: "kiosks",
     company: "Leerybit",
     blurb:
       "Touch terminals where the visit starts: choose a service, get a printed ticket, redeem a booking, rate the visit.",
@@ -176,7 +171,6 @@ export const projects: Project[] = [
   {
     index: "07",
     title: "Operator Workstation",
-    gallery: "operator",
     company: "Leerybit",
     blurb:
       "The tool an operator uses hundreds of times a day to call, serve, redirect and finish visitors, with the allowed flow enforced by a state machine.",
